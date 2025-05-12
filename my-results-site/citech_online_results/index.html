@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cambridge Institute of Technology - Results</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    .header {
+      background-color: #fff;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #0066cc;
+    }
+    .header img {
+      height: 60px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+    .header h1 {
+      display: inline;
+      font-size: 24px;
+      color: #333;
+    }
+    .header p {
+      margin: 5px 0;
+      font-size: 14px;
+      color: #666;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+    }
+    .form-box {
+      background: linear-gradient(145deg, #a3e4d7, #48c9b0);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .form-box label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #333;
+    }
+    .form-box input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    .form-box button {
+      background-color: #48c9b0;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .form-box button:hover {
+      background-color: #3aa897;
+    }
+    .footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #0066cc;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 14px;
+    }
+    .footer a {
+      color: white;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+   
+    <h1>CAMBRIDGE INSTITUTE OF TECHNOLOGY</h1>
+    <p>(AN AUTONOMOUS INSTITUTE AFFILIATED TO VISVESVARAYA TECHNOLOGICAL UNIVERSITY, BELAGAVI)</p>
+  </div>
+
+  <div class="container">
+    <div class="form-box">
+      <form id="resultForm">
+        <label for="usn">USN</label>
+        <input type="text" id="usn" placeholder="Enter USN" required>
+        <label for="dob">DATE OF BIRTH</label>
+        <input type="text" id="dob" placeholder="DD/Month/YYYY" required>
+        <button type="submit">SUBMIT</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer">
+    POWERED BY IONEMS (<a href="http://www.ionems.com" target="_blank">www.ionems.com</a>)
+  </div>
+
+  <script>
+    document.getElementById('resultForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const usn = document.getElementById('usn').value.trim().toUpperCase();
+      const dob = document.getElementById('dob').value.trim().toLowerCase();
+
+      // Expected values
+      const expectedUsn = '1CD24CS411';
+      const expectedDob = '26/march/2005';
+
+      // Check if the input matches the expected values
+      if (usn === expectedUsn && dob === expectedDob) {
+        // This will be updated after hosting the PDF
+        window.location.href = '/my-results-site/citech_online_results/pdf/RESULTS 3SEM 1CD24CS411.pdf';
+      } else {
+        alert('Invalid USN or Date of Birth. Please try again.');
+      }
+    });
+  </script>
+</body>
+</html>
